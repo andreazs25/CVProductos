@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
             android:textColor="@color/cardview_light_background" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -62,7 +62,7 @@
             android:text="Email" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editClave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
