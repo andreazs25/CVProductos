@@ -2,6 +2,7 @@ package com.example.cvproductos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,7 +29,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.cvproductos.AccesoInternet.handleSSLHandshake;
+
 public class Login extends AppCompatActivity {
+    private Activity actividadactual = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,10 @@ public class Login extends AppCompatActivity {
                 //Creamos dos variables para guardar textos de entrada
                 final String EMAIL = Email.getText().toString();
                 final String CLAVE = clave.getText().toString();
-                //Enviamos al metodo Login las variables de entrada
+                //Enviamos al metodo Login las variables de
+                AccesoInternet internet = new AccesoInternet(actividadactual);
+                System.out.println("ESTAMOS QUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"+internet.verificarConexion());
+                internet.handleSSLHandshake();
                 login(EMAIL,CLAVE);
             }
         });
