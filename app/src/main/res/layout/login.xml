@@ -31,16 +31,16 @@
 
         <Button
             android:id="@+id/registro"
-            android:layout_width="236dp"
+            android:layout_width="177dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="147dp"
-            android:layout_marginTop="606dp"
-            android:layout_marginEnd="105dp"
-            android:layout_marginBottom="79dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="589dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="96dp"
             android:background="@color/cardview_dark_background"
             android:text="REGISTRAR"
             android:textColor="@color/cardview_light_background" />
