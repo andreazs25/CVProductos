@@ -1,6 +1,7 @@
 package com.example.proyecto3;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,9 +28,12 @@ public class VentaMisProductos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venta_mis_productos);
 
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
+        String usuario = pref.getString("username", "");
+
         Data datos = new Data.Builder()
                 .putString("funcion", "obtenerProductosEnVentaUsuario")
-                .putString("usuario", "mikel")
+                .putString("usuario", usuario)
                 .build();
         OneTimeWorkRequest otwr = new OneTimeWorkRequest.Builder(conexionDBWebService.class).setInputData(datos).build();
         WorkManager.getInstance().getWorkInfoByIdLiveData(otwr.getId()).observe(this, new Observer<WorkInfo>() {

@@ -7,6 +7,7 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -85,6 +86,9 @@ public class NuevoProducto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
+                String usuario = pref.getString("username", "");
+
                 EditText prod =(EditText) findViewById(R.id.nombreP);
                 String producto = prod.getText().toString();
 
@@ -96,7 +100,7 @@ public class NuevoProducto extends AppCompatActivity {
                 Log.i("fecha-hora: ", fecha+"|"+hora);
                 if(uriimagen!=null && producto.length()!=0 && precioI.length()!=0 && precioC.length()!=0 && fecha.length()!=0 && hora.length()!=0){
                     Data datos = new Data.Builder()
-                            .putString("usuario", "mikel")
+                            .putString("usuario", usuario)
                             .putString("producto",producto)
                             .putString("precioInicial", precioInicial)
                             .putString("precioCompra", precioCompra)
