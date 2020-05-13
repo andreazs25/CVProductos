@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "555095506794",
+    "firebase_url": "https://cvproductos-f291e.firebaseio.com",
+    "project_id": "cvproductos-f291e",
+    "storage_bucket": "cvproductos-f291e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555095506794:android:b4246b808eec1170672f13",
+        "android_client_info": {
+          "package_name": "com.example.cvproductos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555095506794-6uh871tf0cdk627gg5chdbdn0qjdm2nv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cvproductos",
+            "certificate_hash": "fea9cfeb71260c9ad9d58840e1542c960574dd4b"
+          }
+        },
+        {
+          "client_id": "555095506794-aad9cjf8065qjd1piq8oqor0ouu6p6em.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfjI-fF2C11hkD2b2qIEwklZhEaR7B5z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555095506794-aad9cjf8065qjd1piq8oqor0ouu6p6em.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

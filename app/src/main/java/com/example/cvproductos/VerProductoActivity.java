@@ -207,7 +207,7 @@ public class VerProductoActivity extends AppCompatActivity {
                         String saldo = pref.getString("saldo", "0");
 
                         //Si transaccion correcta, actualizar saldo y precio y/o eliminar producto
-                        if(resultado.equals("ok")){
+                        if(!resultado.equals("-1")){
                             if (accion.equals("puja")){
                                 // actualizar saldo
                                 String nuevoSaldo = String.valueOf(Float.valueOf(saldo) - Float.valueOf(producto.getPrecioI()));
