@@ -42,7 +42,7 @@ public class Menu extends AppCompatActivity {
         verproductos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, VerProductoActivity.class);
+                Intent intent = new Intent(Menu.this, VentaMisProductos.class);
                 startActivity(intent);
                 //Finalizar actividad
                 finish();

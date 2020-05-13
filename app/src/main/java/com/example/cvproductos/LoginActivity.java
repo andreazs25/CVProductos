@@ -234,6 +234,8 @@ public class LoginActivity extends AppCompatActivity {
             procesoLogIn(user, saldo);
             //Lanzar siguiente actividad
             finalizarActividad();
+            //Llamar a script de actualización de subastas
+            actualizarSubastas();
         }
         // Si no coincide
         else {
@@ -251,4 +253,29 @@ public class LoginActivity extends AppCompatActivity {
         //Finalizar actividad
         finish();
     }
+
+    private void actualizarSubastas() {
+
+        //Establecer parámetros de la conexión
+        Data datos = new Data.Builder()
+                .putString("accion","comprobarSubastas")
+                .putString("name","")
+                .build();
+
+
+        //Restricción de conexión
+        Constraints restricciones = new Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build();
+
+        //Construir conexión
+        OneTimeWorkRequest trabajoPuntual =
+                new OneTimeWorkRequest.Builder(ConexionBDWebService.class)
+                        .setConstraints(restricciones)
+                        .setInputData(datos)
+                        .build();
+
+        WorkManager.getInstance(this).enqueue(trabajoPuntual);
+    }
+
 }

@@ -143,7 +143,7 @@ public class conexionDBWebService extends Worker {
             }
 
         }
-        if(funcion.equals("recargar")) {
+        else if(funcion.equals("recargar")) {
             String usuario = getInputData().getString("usuario");
             String saldo = getInputData().getString("saldo");
 

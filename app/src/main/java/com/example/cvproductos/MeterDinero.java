@@ -38,16 +38,17 @@ public class MeterDinero extends AppCompatActivity {
                 String usuario = pref.getString("username", "");
                 SharedPreferences pref2 = getApplicationContext().getSharedPreferences("MyPref",0);
                 String saldoAnterior = pref2.getString("saldo", "0");
-                editor.putString("saldo",saldoAnterior+SALDO);
+                String nuevoSaldo = saldoAnterior+SALDO;
+                editor.putString("saldo", nuevoSaldo);
                 editor.commit();
 
                 if(SALDO.length()!=0){
                     Data datos = new Data.Builder()
                             .putString("usuario", usuario)
-                            .putString("saldo",saldoAnterior)
+                            .putString("saldo",nuevoSaldo)
                             .putString("funcion", "recargar").build();
                     OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(conexionDBWebService.class).setInputData(datos).build();
-                    WorkManager.getInstance().enqueue(otwr2);
+                    WorkManager.getInstance(getApplicationContext()).enqueue(otwr2);
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor añada un saldo", Toast.LENGTH_LONG).show();
                 }
