@@ -12,7 +12,7 @@
         android:background="@drawable/fondov"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -32,13 +32,13 @@
             android:text="ACEPTAR" />
 
         <EditText
-            android:id="@+id/ediclave"
+            android:id="@+id/editClave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="491dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="508dp"
             android:ems="10"
             android:inputType="textPassword" />
 
@@ -58,7 +58,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/demail"
+            android:id="@+id/editEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -116,7 +116,7 @@
             android:textColor="@android:color/black" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/volverButton"
             android:layout_width="136dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -125,6 +125,87 @@
             android:layout_marginStart="49dp"
             android:layout_marginEnd="241dp"
             android:layout_marginBottom="187dp"
-            android:text="VOLVER MENU" />
+            android:background="@color/cardview_dark_background"
+            android:text="VOLVER MENU"
+            android:textColor="@color/cardview_light_background" />
+
+        <Button
+            android:id="@+id/aceptarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="181dp"
+            android:layout_marginTop="482dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="187dp"
+            android:background="@color/cardview_dark_background"
+            android:text="ACEPTAR"
+            android:textColor="@color/cardview_light_background" />
+
+        <EditText
+            android:id="@+id/editDinero"
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="248dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="432dp"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="94dp"
+            android:layout_marginEnd="262dp"
+            android:layout_marginBottom="600dp"
+            android:text="Email:"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/textClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="97dp"
+            android:layout_marginTop="184dp"
+            android:layout_marginEnd="247dp"
+            android:layout_marginBottom="514dp"
+            android:text="Clave:"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_dark" />
+
+        <TextView
+            android:id="@+id/textRecarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="261dp"
+            android:layout_marginEnd="254dp"
+            android:layout_marginBottom="442dp"
+            android:text="Recargar Dinero:"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/background_dark" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
