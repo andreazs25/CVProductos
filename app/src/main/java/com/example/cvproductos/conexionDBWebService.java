@@ -142,13 +142,84 @@ public class conexionDBWebService extends Worker {
                 e.printStackTrace();
             }
 
-        }else if(funcion.equals("obtenerProductosEnVentaUsuario")){
+        }
+        if(funcion.equals("recargar")) {
+            String usuario = getInputData().getString("usuario");
+            String saldo = getInputData().getString("saldo");
+
+            Log.i("Estado", "Dentro");
+
+            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/saldo_update.php");
+            JSONObject parametrosJSON = new JSONObject();
+            try {
+                parametrosJSON.put("usuario", usuario);
+                parametrosJSON.put("saldo", saldo);
+                urlConnection.setRequestMethod("POST");
+                urlConnection.setDoOutput(true);
+                urlConnection.setRequestProperty("Content-Type", "application/json");
+                PrintWriter out = new PrintWriter(urlConnection.getOutputStream());
+                out.print(parametrosJSON.toString());
+                out.close();
+                Log.i("Conexion: ", "Enviada");
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+
+            int statusCode = 0;
+            try {
+                statusCode = urlConnection.getResponseCode();
+                Log.i("status: ", " " + statusCode);
+                if (statusCode == 200) {
+                    Log.i("resultado: ", "saldo recargado");
+                    return Result.success();
+
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        if(funcion.equals("cambiar")) {
+            String usuario = getInputData().getString("usuario");
+            String clave = getInputData().getString("clave");
+
+            Log.i("Estado", "Dentro");
+
+            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/saldo_update.php");
+            JSONObject parametrosJSON = new JSONObject();
+            try {
+                parametrosJSON.put("usuario", usuario);
+                parametrosJSON.put("clave", clave);
+                urlConnection.setRequestMethod("POST");
+                urlConnection.setDoOutput(true);
+                urlConnection.setRequestProperty("Content-Type", "application/json");
+                PrintWriter out = new PrintWriter(urlConnection.getOutputStream());
+                out.print(parametrosJSON.toString());
+                out.close();
+                Log.i("Conexion: ", "Enviada");
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+
+            int statusCode = 0;
+            try {
+                statusCode = urlConnection.getResponseCode();
+                Log.i("status: ", " " + statusCode);
+                if (statusCode == 200) {
+                    Log.i("resultado: ", "clave cambiada");
+                    return Result.success();
+
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if(funcion.equals("obtenerProductosEnVentaUsuario")){
 
             String usuario = getInputData().getString("usuario");
 
             Log.i("Estado", "Dentro");
 
-            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/obtenerProductosUsuario.php");
+            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/update_clave.php");
             JSONObject parametrosJSON = new JSONObject();
             try {
                 parametrosJSON.put("usuario", usuario);
