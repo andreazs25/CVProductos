@@ -1,4 +1,4 @@
-package com.example.proyecto3;
+package com.example.cvproductos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;

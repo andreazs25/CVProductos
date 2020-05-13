@@ -1,4 +1,4 @@
-package com.example.proyecto3;
+package com.example.cvproductos;
 
 import android.content.Context;
 import android.graphics.Bitmap;

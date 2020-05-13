@@ -61,7 +61,7 @@
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/NUEVA CLAVE"
+            android:id="@+id/NUEVA_CLAVE"
             android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"

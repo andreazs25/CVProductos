@@ -1,4 +1,4 @@
-package com.example.proyecto3;
+package com.example.cvproductos;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

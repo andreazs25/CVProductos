@@ -12,17 +12,17 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".MeterDinero">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".VentaMisProductos" />
+        <activity android:name=".NuevoProducto" />
         <activity android:name=".Menu" />
         <activity android:name=".CambiarClave" />
         <activity android:name=".Registro" />
         <activity android:name=".formulario" />
-        <activity android:name=".Login">
+        <activity android:name=".VerFotoActivity"></activity>
+        <activity android:name=".VerProductoActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
