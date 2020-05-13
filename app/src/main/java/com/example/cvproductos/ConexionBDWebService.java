@@ -69,6 +69,7 @@ public class ConexionBDWebService extends Worker {
                     .appendQueryParameter("funcion", funcion);
             parametros = builder.build().getEncodedQuery();
         }
+
         else{
             //Establecer parametros
             Uri.Builder builder = new Uri.Builder()

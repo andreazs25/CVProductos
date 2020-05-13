@@ -23,9 +23,33 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+        final Button miCuenta=findViewById(R.id.micuenta);
+        final Button verproductos=findViewById(R.id.verProductos);
         final Button list = findViewById(R.id.verSubastas);
+        final Button pago=findViewById(R.id.Pago);
 
+        //action listener mi Cuenta
+        miCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, CambiarClave.class);
+                startActivity(intent);
+                //Finalizar actividad
+                finish();
+            }
+        });
+        //action listener ver productos
+        verproductos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, VerProductoActivity.class);
+                startActivity(intent);
+                //Finalizar actividad
+                finish();
+            }
+        });
+
+        //Action listener versubastas
         list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +62,18 @@ public class Menu extends AppCompatActivity {
                 Toast.makeText(Menu.this, "Cargando información...", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //action listener pago
+        pago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, MeterDinero.class);
+                startActivity(intent);
+                //Finalizar actividad
+                finish();
+            }
+        });
+
 
     }
 

@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/fondov"
         tools:context=".VerProductoActivity">
 
         <Button
@@ -15,10 +17,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
-            android:text="Comprar"
+            android:background="@color/cardview_dark_background"
             android:enabled="false"
+            android:text="Comprar"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintStart_toEndOf="@+id/btn_Pujar"
             app:layout_constraintTop_toBottomOf="@+id/view_precioC" />
+
+        <Button
+            android:id="@+id/btn_Pujar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@color/cardview_dark_background"
+            android:enabled="false"
+            android:text="Pujar"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_precioI" />
+
+        <Button
+            android:id="@+id/btn_form_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="36dp"
+            android:background="@color/cardview_dark_background"
+            android:text="Volver"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Pujar" />
+
+        <Button
+            android:id="@+id/button_img"
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="36dp"
+            android:background="@color/cardview_dark_background"
+            android:text="Ver foto"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_foto" />
+
+        <ImageView
+            android:id="@+id/img_foto"
+            android:layout_width="121dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/view_precioC"
@@ -74,36 +123,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_img" />
 
-        <Button
-            android:id="@+id/btn_Pujar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Pujar"
-            android:enabled="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_precioI" />
-
-        <Button
-            android:id="@+id/btn_form_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="36dp"
-            android:text="Volver"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_Pujar" />
-
-        <ImageView
-            android:id="@+id/img_foto"
-            android:layout_width="121dp"
-            android:layout_height="95dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
             android:id="@+id/view_precioI"
             android:layout_width="111dp"
@@ -113,15 +132,6 @@
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_descr" />
-
-        <Button
-            android:id="@+id/button_img"
-            android:layout_width="90dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="36dp"
-            android:text="Ver foto"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_foto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

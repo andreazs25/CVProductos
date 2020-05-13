@@ -4,19 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/fondov"
     android:visibility="visible"
     tools:context=".VentaMisProductos">
 
-    <TextView
-        android:id="@+id/listaP"
+    <Button
+        android:id="@+id/añadirP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Lista Productos:"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="150dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Añadir Producto"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/listaProductos" />
 
     <ListView
         android:id="@+id/listaProductos"
@@ -36,18 +42,15 @@
 
     </ListView>
 
-    <Button
-        android:id="@+id/añadirP"
+    <TextView
+        android:id="@+id/listaP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="150dp"
-        android:text="Añadir Producto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Lista Productos:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaProductos" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
