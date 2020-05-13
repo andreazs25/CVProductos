@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondov"
     tools:context=".NuevoProducto">
 
     <Button
@@ -14,7 +15,9 @@
         android:layout_marginTop="107dp"
         android:layout_marginEnd="78dp"
         android:layout_marginBottom="128dp"
+        android:background="@color/cardview_dark_background"
         android:text="Confirmar"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,12 +31,67 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="38dp"
+        android:background="@color/cardview_dark_background"
         android:text="Cambiar Foto"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toTopOf="@+id/imagen2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/elegirFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="54dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Fecha"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/elegirHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="54dp"
+        android:background="@color/cardview_dark_background"
+        android:text="Hora"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/nombreP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/elegirFecha" />
+
+    <EditText
+        android:id="@+id/nombreP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Introduzca un nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen2" />
+
+    <EditText
+        android:id="@+id/sPrecioInicial2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/precioInicial2"
+        app:layout_constraintTop_toBottomOf="@+id/nombreP" />
+
+    <EditText
+        android:id="@+id/precioCompra2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/sPrecioCompra2"
+        app:layout_constraintTop_toBottomOf="@+id/sPrecioInicial2" />
 
     <ImageView
         android:id="@+id/imagen2"
@@ -45,15 +103,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cambiarFoto"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <EditText
-        android:id="@+id/nombreP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Introduzca un nombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen2" />
-
     <TextView
         android:id="@+id/precioInicial2"
         android:layout_width="wrap_content"
@@ -62,15 +111,6 @@
         android:layout_marginTop="38dp"
         android:text="Precio Inicial:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreP" />
-
-    <EditText
-        android:id="@+id/sPrecioInicial2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/precioInicial2"
         app:layout_constraintTop_toBottomOf="@+id/nombreP" />
 
     <TextView
@@ -82,35 +122,4 @@
         android:text="Precio Compra:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/precioInicial2" />
-
-    <EditText
-        android:id="@+id/precioCompra2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toEndOf="@+id/sPrecioCompra2"
-        app:layout_constraintTop_toBottomOf="@+id/sPrecioInicial2" />
-
-    <Button
-        android:id="@+id/elegirFecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="54dp"
-        android:text="Fecha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/elegirHora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="54dp"
-        android:text="Hora"
-        app:layout_constraintBottom_toTopOf="@+id/nombreP"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/elegirFecha" />
 </androidx.constraintlayout.widget.ConstraintLayout>

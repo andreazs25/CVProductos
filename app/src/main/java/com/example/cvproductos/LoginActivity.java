@@ -2,13 +2,9 @@ package com.example.cvproductos;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,8 +19,6 @@ import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
-import java.util.Locale;
-
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -34,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
 
         /////////////
         token = "abc";
@@ -43,9 +37,20 @@ public class LoginActivity extends AppCompatActivity {
         coincide = false;
 
         //Guardar en variables los elementos de la vista
-        final EditText usernameEditText = findViewById(R.id.username);
-        final EditText passwordEditText = findViewById(R.id.password);
+        final EditText usernameEditText = findViewById(R.id.editLogin);
+        final EditText passwordEditText = findViewById(R.id.claveedi);
         final Button loginButton = findViewById(R.id.login);
+        final Button registroButtom=findViewById(R.id.registro);
+        //action listener del boton registro
+        registroButtom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Registro.class);
+                startActivity(intent);
+                //Finalizar actividad
+                finish();
+            }
+        });
 
         //Listener de los campos de texto
         TextWatcher afterTextChangedListener = new TextWatcher() {
