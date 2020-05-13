@@ -61,10 +61,9 @@
             android:inputType="textPassword" />
 
         <TextView
-
-            android:id="@+id/NUEVACLAVE"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
+            android:id="@+id/NUEVA_CLAVE"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -72,15 +71,14 @@
             android:layout_marginStart="53dp"
             android:layout_marginTop="384dp"
             android:layout_marginEnd="265dp"
-            android:layout_marginBottom="328dp"
-            android:background="@color/cardview_dark_background"
+            android:layout_marginBottom="312dp"
             android:text="NUEVA CLAVE"
-            android:textColor="@color/cardview_light_background" />
+            android:textColor="@android:color/background_dark" />
 
         <TextView
             android:id="@+id/clave"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -88,37 +86,35 @@
             android:layout_marginStart="59dp"
             android:layout_marginTop="256dp"
             android:layout_marginEnd="264dp"
-            android:layout_marginBottom="459dp"
-            android:background="@color/cardview_dark_background"
+            android:layout_marginBottom="445dp"
             android:text="CLAVE"
-            android:textColor="@color/cardview_light_background" />
+            android:textColor="@android:color/background_dark" />
 
         <TextView
             android:id="@+id/pemail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="91dp"
+            android:layout_height="33dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="54dp"
             android:layout_marginEnd="266dp"
-            android:layout_marginBottom="557dp"
-            android:background="@color/cardview_dark_background"
+            android:layout_marginBottom="543dp"
             android:text="EMAIL:"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/cvolver"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="60dp"
             android:layout_marginTop="512dp"
-            android:layout_marginEnd="234dp"
-            android:layout_marginBottom="187dp"
+            android:layout_marginEnd="263dp"
+            android:layout_marginBottom="171dp"
             android:background="@color/cardview_dark_background"
             android:text="VOLVER"
             android:textColor="@color/cardview_light_background" />
@@ -126,15 +122,15 @@
         <Button
             android:id="@+id/caceptar"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="246dp"
             android:layout_marginTop="510dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginBottom="185dp"
+            android:layout_marginEnd="77dp"
+            android:layout_marginBottom="173dp"
             android:background="@color/cardview_dark_background"
             android:text="ACEPTAR"
             android:textColor="@color/cardview_light_background" />
