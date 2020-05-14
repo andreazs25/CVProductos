@@ -112,7 +112,7 @@ public class NuevoProducto extends AppCompatActivity {
 
                     Data datos2 = new Data.Builder()
                             .putString("funcion", "subirImagen")
-                            .putString("usuario", "mikel")
+                            .putString("usuario", usuario)
                             .putString("producto",producto)
                             .putString("foto", uriimagen.toString())
                             .build();
@@ -185,6 +185,15 @@ public class NuevoProducto extends AppCompatActivity {
         String preC = savedInstanceState.getString("preC");
         EditText precioCompra = (EditText) findViewById(R.id.precioCompra2);
         precioCompra.setText(String.valueOf(preC));
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Volver al menu
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+        //Finalizar actividad
+        finish();
     }
 
 }

@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import java.util.List;
+
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -53,12 +55,7 @@ public class Menu extends AppCompatActivity {
         list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(GestorProductos.getGestorProductos().getListaProductos().size() == 0) {
-                    obtenerListaProductos();
-                }
-                else{
-                    lanzarActividad(ListActivity.class);
-                }
+                obtenerListaProductos();
                 Toast.makeText(Menu.this, "Cargando información...", Toast.LENGTH_SHORT).show();
             }
         });
@@ -116,6 +113,7 @@ public class Menu extends AppCompatActivity {
                         int id;
                         boolean ultimo = false;
                         Bitmap foto = null;
+                        gestorProductos.resetearLista();
                         for(int i = 0; i < lista.length; i++){
                             id = Integer.parseInt(lista[i][0]);
                             nombre = lista[i][1];
@@ -126,12 +124,11 @@ public class Menu extends AppCompatActivity {
                             fecha = lista[i][7];
                             gestorProductos.addProducto(id, nombre, usuario, foto, precioI,
                                     precioC, descr, fecha);
-                            if(i == lista.length - 1){
+                            if (i == lista.length - 1) {
                                 ultimo = true;
                             }
                             obtenerImagen(lista[i][3], id, ultimo);
                         }
-
 
                     }
 

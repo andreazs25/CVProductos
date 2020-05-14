@@ -219,7 +219,7 @@ public class conexionDBWebService extends Worker {
 
             Log.i("Estado", "Dentro");
 
-            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/update_clave.php");
+            HttpsURLConnection urlConnection = GeneradorConexionesSeguras.getInstance().crearConexionSegura(getApplicationContext(), "https://134.209.235.115/mmerayo002/WEB/proyecto3/obtenerProductosUsuario.php");
             JSONObject parametrosJSON = new JSONObject();
             try {
                 parametrosJSON.put("usuario", usuario);

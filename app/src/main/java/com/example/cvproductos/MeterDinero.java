@@ -36,18 +36,18 @@ public class MeterDinero extends AppCompatActivity {
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
                 SharedPreferences.Editor editor=pref.edit();
                 String usuario = pref.getString("username", "");
-                SharedPreferences pref2 = getApplicationContext().getSharedPreferences("MyPref",0);
-                String saldoAnterior = pref2.getString("saldo", "0");
-                String nuevoSaldo = saldoAnterior+SALDO;
+                String saldoAnterior = pref.getString("saldo", "0");
+                String nuevoSaldo = String.valueOf(Float.valueOf(SALDO) - Float.valueOf(saldoAnterior));
                 editor.putString("saldo", nuevoSaldo);
                 editor.commit();
 
                 if(SALDO.length()!=0){
                     Data datos = new Data.Builder()
-                            .putString("usuario", usuario)
+                            .putString("name", usuario)
                             .putString("saldo",nuevoSaldo)
-                            .putString("funcion", "recargar").build();
-                    OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(conexionDBWebService.class).setInputData(datos).build();
+                            .putString("accion", "addDinero")
+                            .build();
+                    OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(ConexionBDWebService.class).setInputData(datos).build();
                     WorkManager.getInstance(getApplicationContext()).enqueue(otwr2);
                 }else{
                     Toast.makeText(getApplicationContext(), "Por favor añada un saldo", Toast.LENGTH_LONG).show();
@@ -76,8 +76,14 @@ public class MeterDinero extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        //Volver al menu
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+        //Finalizar actividad
+        finish();
+    }
 
 
-
-
-        }
+}

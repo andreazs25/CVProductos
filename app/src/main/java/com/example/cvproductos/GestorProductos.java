@@ -70,4 +70,17 @@ public class GestorProductos {
             listaProductos.remove(producto);
         }
     }
+
+    public boolean existeProducto(int id){
+        if(buscarProducto(id) == null){
+            return false;
+        }
+        else return true;
+    }
+
+    public void resetearLista(){
+        this.listaProductos = new ArrayList<>();
+        this.IdActual = -1;
+    }
+
 }

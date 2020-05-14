@@ -69,6 +69,22 @@ public class ConexionBDWebService extends Worker {
                     .appendQueryParameter("funcion", funcion);
             parametros = builder.build().getEncodedQuery();
         }
+        else if(accion.equals("addDinero")){
+            String saldoNuevo = getInputData().getString("saldo");
+
+            Uri.Builder builder = new Uri.Builder()
+                    .appendQueryParameter("name", name)
+                    .appendQueryParameter("saldoNuevo", saldoNuevo);
+            parametros = builder.build().getEncodedQuery();
+        }
+        else if(accion.equals("cambiarPass")){
+            String passNueva = getInputData().getString("pass");
+
+            Uri.Builder builder = new Uri.Builder()
+                    .appendQueryParameter("name", name)
+                    .appendQueryParameter("passNueva", passNueva);
+            parametros = builder.build().getEncodedQuery();
+        }
         else{
             //Establecer parametros
             Uri.Builder builder = new Uri.Builder()

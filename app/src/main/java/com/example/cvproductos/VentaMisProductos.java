@@ -28,6 +28,8 @@ public class VentaMisProductos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venta_mis_productos);
 
+
+
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
         String usuario = pref.getString("username", "");
 
@@ -87,6 +89,17 @@ public class VentaMisProductos extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Volver al menu
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+        //Finalizar actividad
+        finish();
     }
 
 

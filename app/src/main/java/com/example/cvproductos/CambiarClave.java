@@ -1,7 +1,9 @@
 package com.example.cvproductos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.Constraints;
 import androidx.work.Data;
+import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
@@ -17,6 +19,7 @@ public class CambiarClave extends AppCompatActivity {
 private Button volver;
 private Button aceptar;
 private EditText ediclave;
+private EditText ediclave2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +27,8 @@ private EditText ediclave;
 
         volver=findViewById(R.id.cvolver);
         aceptar=findViewById(R.id.caceptar);
-        ediclave=findViewById(R.id.edinuevaClave);
+        ediclave=findViewById(R.id.editText7);
+        ediclave2=findViewById(R.id.edinuevaClave);
         //action listener volver
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,33 +44,52 @@ private EditText ediclave;
             @Override
             public void onClick(View v) {
                 final String NUEVACLAVE=ediclave.getText().toString();
+                final String NUEVACLAVE2=ediclave2.getText().toString();
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref",0);
-                SharedPreferences.Editor editor=pref.edit();
                 String usuario = pref.getString("username", "");
-                SharedPreferences pref2 = getSharedPreferences("MyPref", 0);
-                String clave=pref2.getString("pass","");
-                SharedPreferences.Editor editor2 = pref2.edit();
-                editor.putString("username", usuario);
-                editor.putString("pass", clave);
-                editor.commit();
 
-                if(NUEVACLAVE.length()!=0){
+                if(NUEVACLAVE.length()!=0 && (NUEVACLAVE.equals(NUEVACLAVE2))){
+                    //Establecer parámetros de la conexión
                     Data datos = new Data.Builder()
-                            .putString("usuario", usuario)
-                            .putString("pass",clave)
-                            .putString("funcion", "cambiar").build();
-                    OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(conexionDBWebService.class).setInputData(datos).build();
-                    WorkManager.getInstance().enqueue(otwr2);
+                            .putString("name",usuario)
+                            .putString("pass",NUEVACLAVE)
+                            .putString("accion","cambiarPass")
+                            .build();
+
+                    //Restricción de conexión
+                    Constraints restricciones = new Constraints.Builder()
+                            .setRequiredNetworkType(NetworkType.CONNECTED)
+                            .build();
+
+                    //Construir conexión
+                    OneTimeWorkRequest trabajoPuntual =
+                            new OneTimeWorkRequest.Builder(ConexionBDWebService.class)
+                                    .setConstraints(restricciones)
+                                    .setInputData(datos)
+                                    .build();
+
+                    WorkManager.getInstance(getApplicationContext()).enqueue(trabajoPuntual);
+
+                    Intent intent = new Intent(CambiarClave.this, Menu.class);
+                    startActivity(intent);
+                    //Finalizar actividad
+                    finish();
                 }else{
-                    Toast.makeText(getApplicationContext(), "Por favor añada un saldo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Por favor inserte una nueva contraseña, rellenando bien los dos campos", Toast.LENGTH_LONG).show();
                 }
 
-                Intent intent = new Intent(CambiarClave.this, Menu.class);
-                startActivity(intent);
-                //Finalizar actividad
-                finish();
             }
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        //Volver al menu
+        Intent intent = new Intent(this, Menu.class);
+        startActivity(intent);
+        //Finalizar actividad
+        finish();
+    }
+
 }
